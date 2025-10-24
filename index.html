@@ -147,7 +147,9 @@
         /* Card layout for menu items */
         .cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            /* card width will adapt to the widest category button via --filter-btn-width
+               but never exceed the container width (using min()) so cards don't overflow */
+            grid-template-columns: repeat(auto-fit, minmax(min(var(--filter-btn-width,300px), 100%), 1fr));
             gap: 16px;
         }
 
@@ -161,6 +163,9 @@
             border-radius: 10px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.06);
             border: 1px solid rgba(0,0,0,0.04);
+            box-sizing: border-box;
+            max-width: 100%;
+            overflow: hidden;
         }
 
         .card img {
@@ -590,6 +595,43 @@
         window.addEventListener('resize', updateScrollButtons);
         // Initial check
         updateScrollButtons();
+
+        // Keep product card min width in sync with the widest category button
+        function updateFilterBtnWidth() {
+            const buttons = document.querySelectorAll('.filter-btn');
+            let max = 0;
+            buttons.forEach(b => {
+                const rect = b.getBoundingClientRect();
+                // include horizontal padding/border in width
+                if (rect.width > max) max = rect.width;
+            });
+            // sensible minimum
+            if (max < 220) max = 220;
+            // cap to the main container width so cards don't become wider than their section
+            const mainContainer = document.querySelector('.container');
+            if (mainContainer) {
+                const containerWidth = mainContainer.clientWidth;
+                // leave some room for grid gaps; subtract 32px as a safe margin
+                const cap = Math.max(220, containerWidth - 32);
+                if (max > cap) max = cap;
+            }
+            document.documentElement.style.setProperty('--filter-btn-width', Math.ceil(max) + 'px');
+        }
+
+        // Run on load and when window resizes
+        updateFilterBtnWidth();
+        window.addEventListener('resize', () => {
+            // small debounce
+            clearTimeout(window._filterBtnWidthTimer);
+            window._filterBtnWidthTimer = setTimeout(updateFilterBtnWidth, 120);
+        });
+
+        // If filter buttons change (e.g., text updated), observe mutations
+        const fc = document.querySelector('.filter-container');
+        if (fc && window.MutationObserver) {
+            const mo = new MutationObserver(() => updateFilterBtnWidth());
+            mo.observe(fc, { childList: true, subtree: true, characterData: true });
+        }
     </script>
 </body>
 </html>
