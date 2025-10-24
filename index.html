@@ -62,26 +62,54 @@
             margin-bottom: 20px;
         }
 
-        .menu-item {
+
+        /* Card layout for menu items */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px;
+        }
+
+        .card {
             display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-            align-items: baseline;
+            gap: 12px;
+            align-items: center;
+            background: #fff;
+            padding: 12px;
+            border-radius: 10px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            border: 1px solid rgba(0,0,0,0.04);
         }
 
-        .item-name {
+        .card img {
+            width: 120px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 8px;
+            flex-shrink: 0;
+            background: #f0f0f0;
+        }
+
+        .card .content {
             flex: 1;
         }
 
-        .dots {
-            border-bottom: 1px dotted #999;
-            flex: 1;
-            margin: 0 10px;
+        .card .name {
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 6px;
         }
 
-        .price {
+        .card .desc {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 6px;
+        }
+
+        .card .price {
             color: #333;
-            font-weight: bold;
+            font-weight: 700;
+            white-space: nowrap;
         }
 
         .description {
@@ -137,156 +165,210 @@
             <button class="filter-btn" data-category="chicha">Chicha</button>
         </div>
 
-        <section class="menu-section" data-category="breakfast">
+        <!-- Each section now contains a .cards grid; each product is a .card with an image placeholder -->
+
+        <section class="menu-section" data-category="nharna">
+            <h2>Nharna degla w 3sal</h2>
+            <div class="cards">
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="Sandwich 7louw"><div class="content"><div class="name">Sandwich 7louw</div><div class="desc"></div></div><div class="price">2dt</div></div>
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="Croissant"><div class="content"><div class="name">Croissant</div><div class="desc"></div></div><div class="price">2dt</div></div>
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="Croissant tayer"><div class="content"><div class="name">Croissant tayer</div><div class="desc"></div></div><div class="price">2.5dt</div></div>
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="Sandwich thon"><div class="content"><div class="name">Sandwich thon (baguette ou mbasses)</div><div class="desc"></div></div><div class="price">2.5dt</div></div>
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="Kas 7lib"><div class="content"><div class="name">Kas 7lib ou lBen</div><div class="desc"></div></div><div class="price">1.5dt</div></div>
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="Cake"><div class="content"><div class="name">Cake</div><div class="desc"></div></div><div class="price">2dt</div></div>
+            </div>
+        </section>
+
+        <section class="menu-section" data-category="7alli">
+            <h2>7alli bach twalli</h2>
+            <div class="cards">
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="Mlawi"><div class="content"><div class="name">Mlawi</div><div class="desc"></div></div><div class="price">2.5dt</div></div>
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="K3iba"><div class="content"><div class="name">K3iba banbalouni</div><div class="desc"></div></div><div class="price">1.5dt</div></div>
+            </div>
+        </section>
+
+        <section class="menu-section" data-category="lelli">
+            <h2>Lelli y7eb l7ar</h2>
+            <div class="cards">
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="Sandwich chaud"><div class="content"><div class="name">Sandwich chaud / spécialité chaude</div><div class="desc"></div></div><div class="price">--</div></div>
+            </div>
+        </section>
+
+        <section class="menu-section" data-category="kwayes">
+            <h2>Kwayes jus 3attayer</h2>
+            <div class="cards">
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="Fraise"><div class="content"><div class="name">Fraise</div><div class="desc"></div></div><div class="price">3dt</div></div>
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="Citronade"><div class="content"><div class="name">Citronade</div><div class="desc"></div></div><div class="price">2dt</div></div>
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="Mangue"><div class="content"><div class="name">Mangue</div><div class="desc"></div></div><div class="price">2dt</div></div>
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="Rozata"><div class="content"><div class="name">Rozata</div><div class="desc"></div></div><div class="price">2dt</div></div>
+            </div>
+        </section>
+
+        <section class="menu-section" data-category="petit-dejeuner">
             <h2>Petit Déjeuner</h2>
-            <div class="menu-item">
-                <span class="item-name">Tic Tac</span>
-                <span class="dots"></span>
-                <span class="price">6.5dt</span>
+            <div class="cards">
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="Tic Tac"><div class="content"><div class="name">Tic Tac</div><div class="desc">Café au choix, jus frais, croissant ou cake, eau 0.5L.</div></div><div class="price">6.5dt</div></div>
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="Continental"><div class="content"><div class="name">Continental</div><div class="desc">Café au choix, jus frais, yaourt, viennoiseries, charcuterie, crêpe ou omelette, pain, beurre, chamia, miel, eau 0.5L.</div></div><div class="price">14dt</div></div>
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="Brunch"><div class="content"><div class="name">Brunch</div><div class="desc">2 cafés, 2 jus frais, corbeille de pain, salade de fruits, charcuterie, viennoiseries, 2 crêpes ou 2 omelettes, eau 1L, yaourt, miel, chamia, fromage, beurre.</div></div><div class="price">29dt</div></div>
             </div>
-            <div class="description">Café au choix, jus frais, croissant ou cake, eau 0.5L.</div>
-
-            <div class="menu-item">
-                <span class="item-name">Continental</span>
-                <span class="dots"></span>
-                <span class="price">14dt</span>
-            </div>
-            <div class="description">Café au choix, jus frais, yaourt, viennoiseries, charcuterie, crêpe ou omelette, pain, beurre, chamia, miel, eau 0.5L.</div>
-
-            <div class="menu-item">
-                <span class="item-name">Brunch</span>
-                <span class="dots"></span>
-                <span class="price">29dt</span>
-            </div>
-            <div class="description">2 cafés, 2 jus frais, corbeille de pain, salade de fruits, charcuterie, viennoiseries, 2 crêpes ou 2 omelettes, eau 1L, yaourt, miel, chamia, fromage, beurre.</div>
         </section>
 
-        <section class="menu-section" data-category="coffee">
+        <section class="menu-section" data-category="cafes">
             <h2>Nos Cafés</h2>
-            <div class="menu-item">
-                <span class="item-name">Expresse</span>
-                <span class="dots"></span>
-                <span class="price">2dt</span>
-            </div>
-            <div class="menu-item">
-                <span class="item-name">Américain</span>
-                <span class="dots"></span>
-                <span class="price">2.3dt</span>
-            </div>
-            <div class="menu-item">
-                <span class="item-name">Capucin</span>
-                <span class="dots"></span>
-                <span class="price">2.5dt</span>
-            </div>
-            <div class="menu-item">
-                <span class="item-name">Café crème</span>
-                <span class="dots"></span>
-                <span class="price">3dt</span>
-            </div>
-            <div class="menu-item">
-                <span class="item-name">Machiatto</span>
-                <span class="dots"></span>
-                <span class="price">3.5dt</span>
-            </div>
-            <div class="menu-item">
-                <span class="item-name">Cappuccino</span>
-                <span class="dots"></span>
-                <span class="price">5dt</span>
-            </div>
-            <div class="menu-item">
-                <span class="item-name">Café turc</span>
-                <span class="dots"></span>
-                <span class="price">3.5dt</span>
-            </div>
-            <div class="menu-item">
-                <span class="item-name">Filtre</span>
-                <span class="dots"></span>
-                <span class="price">2dt</span>
+            <div class="cards">
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="Expresse"><div class="content"><div class="name">Expresse</div><div class="desc"></div></div><div class="price">2dt</div></div>
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="Américain"><div class="content"><div class="name">Américain</div><div class="desc"></div></div><div class="price">2.3dt</div></div>
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="Capucin"><div class="content"><div class="name">Capucin</div><div class="desc"></div></div><div class="price">2.5dt</div></div>
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="Café crème"><div class="content"><div class="name">Café crème</div><div class="desc"></div></div><div class="price">3dt</div></div>
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="Machiatto"><div class="content"><div class="name">Machiatto</div><div class="desc"></div></div><div class="price">3.5dt</div></div>
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="Cappuccino"><div class="content"><div class="name">Cappuccino</div><div class="desc"></div></div><div class="price">5dt</div></div>
             </div>
         </section>
 
-        <section class="menu-section" data-category="coffee">
+        <section class="menu-section" data-category="nespresso">
             <h2>Nos Cafés Nespresso</h2>
-            <div class="menu-item">
-                <span class="item-name">Nespresso</span>
-                <span class="dots"></span>
-                <span class="price">3.5dt</span>
+            <div class="cards">
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="Nespresso"><div class="content"><div class="name">Nespresso</div><div class="desc"></div></div><div class="price">3.5dt</div></div>
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="Expresse Nespresso"><div class="content"><div class="name">Expresse (Nespresso)</div><div class="desc"></div></div><div class="price">2.5dt</div></div>
             </div>
-            <div class="menu-item">
-                <span class="item-name">Expresse</span>
-                <span class="dots"></span>
-                <span class="price">2.5dt</span>
-            </div>
-            <div class="menu-item">
-                <span class="item-name">Nespresso Américain</span>
-                <span class="dots"></span>
-                <span class="price">3.5dt</span>
-            </div>
-            <!-- Add other Nespresso items -->
         </section>
 
-        <section class="menu-section" data-category="coffee">
+        <section class="menu-section" data-category="aromatise">
+            <h2>Cafés Aromatisé</h2>
+            <div class="cards">
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="Arome"><div class="content"><div class="name">Arome (Nestlé, Menthe)</div><div class="desc"></div></div><div class="price">+0.5dt</div></div>
+            </div>
+        </section>
+
+        <section class="menu-section" data-category="iced-coffee">
             <h2>Iced Coffee</h2>
-            <div class="menu-item">
-                <span class="item-name">Iced Coffee classique</span>
-                <span class="dots"></span>
-                <span class="price">3.5dt</span>
+            <div class="cards">
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="Iced Coffee classique"><div class="content"><div class="name">Iced Coffee classique</div><div class="desc"></div></div><div class="price">3.5dt</div></div>
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="Iced Coffee Caramel"><div class="content"><div class="name">Iced Coffee Caramel</div><div class="desc"></div></div><div class="price">5dt</div></div>
             </div>
-            <div class="menu-item">
-                <span class="item-name">Iced Coffee Caramel</span>
-                <span class="dots"></span>
-                <span class="price">5dt</span>
-            </div>
-            <!-- Add other Iced Coffee items -->
         </section>
 
-        <section class="menu-section" data-category="tea">
+        <section class="menu-section" data-category="the">
             <h2>Nos Thé</h2>
-            <div class="menu-item">
-                <span class="item-name">Thé aux menthe</span>
-                <span class="dots"></span>
-                <span class="price">2dt</span>
-            </div>
-            <div class="menu-item">
-                <span class="item-name">Thé aux amandes</span>
-                <span class="dots"></span>
-                <span class="price">4dt</span>
-            </div>
-            <div class="menu-item">
-                <span class="item-name">Thé kaiida assal</span>
-                <span class="dots"></span>
-                <span class="price">6dt</span>
+            <div class="cards">
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="Thé aux menthe"><div class="content"><div class="name">Thé aux menthe</div><div class="desc"></div></div><div class="price">2dt</div></div>
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="Thé aux amandes"><div class="content"><div class="name">Thé aux amandes</div><div class="desc"></div></div><div class="price">4dt</div></div>
             </div>
         </section>
 
-        <section class="menu-section" data-category="juice">
+        <section class="menu-section" data-category="iced-the">
+            <h2>Iced Thé</h2>
+            <div class="cards">
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="Iced thè menthe glacé"><div class="content"><div class="name">Iced thè menthe glacé</div><div class="desc"></div></div><div class="price">3dt</div></div>
+            </div>
+        </section>
+
+        <section class="menu-section" data-category="jus">
             <h2>Nos Jus</h2>
-            <div class="menu-item">
-                <span class="item-name">Jus d'orange</span>
-                <span class="dots"></span>
-                <span class="price">3.5dt</span>
+            <div class="cards">
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="Jus d’orange"><div class="content"><div class="name">Jus d’orange</div><div class="desc"></div></div><div class="price">3.5dt</div></div>
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="Jus citron"><div class="content"><div class="name">Jus citron</div><div class="desc"></div></div><div class="price">4dt</div></div>
             </div>
-            <div class="menu-item">
-                <span class="item-name">Jus citron</span>
-                <span class="dots"></span>
-                <span class="price">4dt</span>
-            </div>
-            <!-- Add other juice items -->
         </section>
 
-        <section class="menu-section" data-category="crepes">
+        <section class="menu-section" data-category="cocktails">
+            <h2>Nos Cocktails</h2>
+            <div class="cards">
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="Cocktail banane kiwi"><div class="content"><div class="name">Cocktail banane kiwi</div><div class="desc"></div></div><div class="price">6dt</div></div>
+            </div>
+        </section>
+
+        <section class="menu-section" data-category="mousses">
+            <h2>Nos Mousses</h2>
+            <div class="cards">
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="Mousse chocolat vanille"><div class="content"><div class="name">Mousse chocolat vanille</div><div class="desc"></div></div><div class="price">6.5dt</div></div>
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="Mousse oreo nutella"><div class="content"><div class="name">Mousse oreo nutella</div><div class="desc"></div></div><div class="price">7dt</div></div>
+            </div>
+        </section>
+
+        <section class="menu-section" data-category="jwejem">
+            <h2>Jwejem</h2>
+            <div class="cards">
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="Jwejem"><div class="content"><div class="name">Nutella, Oreo, spéculos</div><div class="desc"></div></div><div class="price">--</div></div>
+            </div>
+        </section>
+
+        <section class="menu-section" data-category="smoothies">
+            <h2>Nos Smoothies</h2>
+            <div class="cards">
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="Smoothie mangue ananas"><div class="content"><div class="name">Smoothie mangue ananas</div><div class="desc"></div></div><div class="price">11dt</div></div>
+            </div>
+        </section>
+
+        <section class="menu-section" data-category="mojitos">
+            <h2>Nos Mojitos</h2>
+            <div class="cards">
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="Mojito classique"><div class="content"><div class="name">Mojito classique</div><div class="desc"></div></div><div class="price">6dt</div></div>
+            </div>
+        </section>
+
+        <section class="menu-section" data-category="gaufres">
+            <h2>Nos Gaufres</h2>
+            <div class="cards">
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="Gaufres nutella"><div class="content"><div class="name">Gaufres nutella</div><div class="desc"></div></div><div class="price">6.5dt</div></div>
+            </div>
+        </section>
+
+        <section class="menu-section" data-category="pains">
+            <h2>Nos Pains Cake</h2>
+            <div class="cards">
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="Pains cake"><div class="content"><div class="name">Pains cake</div><div class="desc"></div></div><div class="price">8dt</div></div>
+            </div>
+        </section>
+
+        <section class="menu-section" data-category="crepes-sucrees">
             <h2>Nos Crêpes Sucrées</h2>
-            <div class="menu-item">
-                <span class="item-name">Crêpe chocolat</span>
-                <span class="dots"></span>
-                <span class="price">5dt</span>
+            <div class="cards">
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="Crêpe chocolat"><div class="content"><div class="name">Crêpe chocolat</div><div class="desc"></div></div><div class="price">5dt</div></div>
             </div>
-            <div class="menu-item">
-                <span class="item-name">Crêpe nutella</span>
-                <span class="dots"></span>
-                <span class="price">7.5dt</span>
+        </section>
+
+        <section class="menu-section" data-category="crepes-salees">
+            <h2>Nos Crêpes Salées</h2>
+            <div class="cards">
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="Crêpe thon fromage"><div class="content"><div class="name">Crêpe thon fromage</div><div class="desc"></div></div><div class="price">6.5dt</div></div>
             </div>
-            <!-- Add other sweet crepes -->
+        </section>
+
+        <section class="menu-section" data-category="omelettes">
+            <h2>Nos Omelettes</h2>
+            <div class="cards">
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="Omelette nature"><div class="content"><div class="name">Omelette nature</div><div class="desc"></div></div><div class="price">5dt</div></div>
+            </div>
+        </section>
+
+        <section class="menu-section" data-category="panini">
+            <h2>Panini</h2>
+            <div class="cards">
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="Panini"><div class="content"><div class="name">Panini (variétés)</div><div class="desc"></div></div><div class="price">--</div></div>
+            </div>
+        </section>
+
+        <section class="menu-section" data-category="boissons">
+            <h2>Boissons Froides</h2>
+            <div class="cards">
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="Eau 1L"><div class="content"><div class="name">Eau minérale 1L</div><div class="desc"></div></div><div class="price">1.5dt</div></div>
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="Eau 0.5L"><div class="content"><div class="name">Eau minérale 0.5L</div><div class="desc"></div></div><div class="price">1dt</div></div>
+            </div>
+        </section>
+
+        <section class="menu-section" data-category="9ayda">
+            <h2>93ayda 3ssal</h2>
+            <div class="cards">
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="4 pièces"><div class="content"><div class="name">Café turc ou café au choix, s7ayen 7louw 3arbi (4 pièces)</div><div class="desc"></div></div><div class="price">10dt</div></div>
+            </div>
+        </section>
+
+        <section class="menu-section" data-category="chicha">
+            <h2>Chicha</h2>
+            <div class="cards">
+                <div class="card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='90'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='12'>Image</text></svg>" alt="Chicha"><div class="content"><div class="name">Chicha kaiida asal</div><div class="desc"></div></div><div class="price">10dt</div></div>
+            </div>
         </section>
     </div>
 
