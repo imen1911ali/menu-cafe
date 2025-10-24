@@ -91,7 +91,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 8px 16px;
+            padding: 8px 8px;
             background-color: #fbf6e9;
             border: none;
             border-radius: 20px;
@@ -102,11 +102,12 @@
             white-space: nowrap;
             color: #000;
             gap: 6px;
+            width: 120px;
         }
 
         .filter-btn .category-icon {
-            width: 40px;
-            height: 40px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
             object-fit: cover;
             background-color: #f0f0f0;
@@ -142,8 +143,9 @@
 
         .card {
             display: flex;
-            gap: 12px;
-            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            height: 280px;
             background: #fff;
             padding: 12px;
             border-radius: 10px;
@@ -152,34 +154,40 @@
         }
 
         .card img {
-            width: 160px;
-            height: 120px;
+            width: 100%;
+            height: 180px;
             object-fit: cover;
             border-radius: 8px;
-            flex-shrink: 0;
+            margin-bottom: 12px;
             background: #f0f0f0;
         }
 
         .card .content {
             flex: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .card .name {
             font-weight: 600;
             color: #222;
             margin-bottom: 6px;
+            font-size: 1.1em;
         }
 
         .card .desc {
             color: #666;
             font-size: 0.9em;
             margin-bottom: 6px;
+            flex: 1;
         }
 
         .card .price {
             color: #333;
             font-weight: 700;
             white-space: nowrap;
+            align-self: flex-end;
+            font-size: 1.1em;
         }
 
         .description {
@@ -210,9 +218,9 @@
             <button class="scroll-btn left" aria-label="Scroll left">←</button>
             <div class="filter-container">
                 <button class="filter-btn active" data-category="all"><img src="" alt="" class="category-icon">All</button>
-                <button class="filter-btn" data-category="nharna"><img src="" alt="Nharna icon" class="category-icon">Nharna degla w 3sal</button>
-            <button class="filter-btn" data-category="7alli"><img src="" alt="7alli icon" class="category-icon">7alli bach twalli</button>
-            <button class="filter-btn" data-category="lelli"><img src="" alt="Lelli icon" class="category-icon">Lelli y7eb l7ar</button>
+                <button class="filter-btn" data-category="nharna"><img src="images/americano.png" alt="Nharna icon" class="category-icon">Nharna degla w 3sal</button>
+            <button class="filter-btn" data-category="7alli"><img src="images/banbalouyni2.jpg" alt="7alli icon" class="category-icon">7alli bach twalli</button>
+            <button class="filter-btn" data-category="lelli"><img src="images/cake.jpg" alt="Lelli icon" class="category-icon">Lelli y7eb l7ar</button>
             <button class="filter-btn" data-category="kwayes"><img src="" alt="Kwayes icon" class="category-icon">Kwayes jus 3attayer</button>
             <button class="filter-btn" data-category="petit-dejeuner"><img src="" alt="Petit Déjeuner icon" class="category-icon">Petit Déjeuner</button>
             <button class="filter-btn" data-category="cafes"><img src="" alt="Cafés icon" class="category-icon">Nos Cafés</button>
