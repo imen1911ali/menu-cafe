@@ -36,12 +36,55 @@
             direction: rtl;
         }
 
+        .filter-section {
+            position: relative;
+            margin-bottom: 30px;
+            padding: 0 40px;
+        }
+
         .filter-container {
             display: flex;
-            justify-content: center;
             gap: 10px;
             margin-bottom: 30px;
-            flex-wrap: wrap;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE and Edge */
+            padding: 5px 0;
+        }
+
+        .filter-container::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+        }
+
+        .scroll-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #333;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .scroll-btn:hover {
+            background: #444;
+        }
+
+        .scroll-btn.left {
+            left: 0;
+        }
+
+        .scroll-btn.right {
+            right: 0;
         }
 
         .filter-btn {
@@ -150,9 +193,11 @@
             <div class="slogan">قعيدة عسل عند أمي</div>
         </div>
         
-        <div class="filter-container">
-            <button class="filter-btn active" data-category="all">All</button>
-            <button class="filter-btn" data-category="nharna">Nharna degla w 3sal</button>
+        <div class="filter-section">
+            <button class="scroll-btn left" aria-label="Scroll left">←</button>
+            <div class="filter-container">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="nharna">Nharna degla w 3sal</button>
             <button class="filter-btn" data-category="7alli">7alli bach twalli</button>
             <button class="filter-btn" data-category="lelli">Lelli y7eb l7ar</button>
             <button class="filter-btn" data-category="kwayes">Kwayes jus 3attayer</button>
@@ -178,6 +223,8 @@
             <button class="filter-btn" data-category="boissons">Boissons Froides</button>
             <button class="filter-btn" data-category="9ayda">93ayda 3ssal</button>
             <button class="filter-btn" data-category="chicha">Chicha</button>
+            </div>
+            <button class="scroll-btn right" aria-label="Scroll right">→</button>
         </div>
 
         <!-- Each section now contains a .cards grid; each product is a .card with an image placeholder -->
@@ -454,6 +501,7 @@
     </div>
 
     <script>
+        // Filter functionality
         document.querySelectorAll('.filter-btn').forEach(button => {
             button.addEventListener('click', () => {
                 // Remove active class from all buttons
@@ -474,8 +522,43 @@
                         section.style.display = 'none';
                     }
                 });
+
+                // Ensure clicked button is visible
+                button.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
             });
         });
+
+        // Horizontal scrolling with buttons
+        const container = document.querySelector('.filter-container');
+        const leftBtn = document.querySelector('.scroll-btn.left');
+        const rightBtn = document.querySelector('.scroll-btn.right');
+        const scrollAmount = 200;
+
+        leftBtn.addEventListener('click', () => {
+            container.scrollBy({
+                left: -scrollAmount,
+                behavior: 'smooth'
+            });
+        });
+
+        rightBtn.addEventListener('click', () => {
+            container.scrollBy({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        });
+
+        // Hide/show scroll buttons based on scroll position
+        const updateScrollButtons = () => {
+            leftBtn.style.display = container.scrollLeft > 0 ? 'flex' : 'none';
+            rightBtn.style.display = 
+                container.scrollLeft < (container.scrollWidth - container.clientWidth) ? 'flex' : 'none';
+        };
+
+        container.addEventListener('scroll', updateScrollButtons);
+        window.addEventListener('resize', updateScrollButtons);
+        // Initial check
+        updateScrollButtons();
     </script>
 </body>
 </html>
