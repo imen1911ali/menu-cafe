@@ -157,7 +157,8 @@
             display: flex;
             flex-direction: column;
             width: 100%;
-            height: 280px;
+            min-height: 280px;
+            height: auto;
             background: #fff;
             padding: 12px;
             border-radius: 10px;
@@ -186,15 +187,24 @@
         .card .name {
             font-weight: 600;
             color: #222;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
             font-size: 1.1em;
+            order: 1;
         }
 
         .card .desc {
             color: #666;
             font-size: 0.9em;
-            margin-bottom: 6px;
-            flex: 1;
+            margin-bottom: 8px;
+            order: 2;
+        }
+
+        .card .meta {
+            margin-top: auto;
+            order: 3;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .card .price {
@@ -284,9 +294,9 @@
         <section class="menu-section" data-category="nharna">
             <h2>Nharna degla w 3sal</h2>
             <div class="cards">
-                <div class="card"><img src="images/sanhlou.jpeg" alt="Sandwich 7louw"><div class="content"><div class="name">Sandwich 7louw</div><div class="desc"></div></div><div class="price">2dt</div></div>
-                <div class="card"><img src="images/lban.png" alt="Kas 7lib ou lBen"><div class="content"><div class="name">Kas 7lib ou lBen</div><div class="desc"></div></div><div class="price">1.5dt</div></div>
-                <div class="card"><img src="images/banbalouyni2.jpg" alt="K3iba banbalouni 3lech la"><div class="content"><div class="name">K3iba banbalouni 3lech la</div><div class="desc"></div></div><div class="price">1.5dt</div></div>
+                <div class="card"><img src="images/sanhlou.jpeg" alt="Sandwich 7louw"><div class="content"><div class="name">Sandwich 7louw</div><div class="desc"></div><div class="meta"><span class="prix-label">Prix</span><span class="price">2dt</span></div></div></div>
+                <div class="card"><img src="images/lban.png" alt="Kas 7lib ou lBen"><div class="content"><div class="name">Kas 7lib ou lBen</div><div class="desc"></div><div class="meta"><span class="prix-label">Prix</span><span class="price">1.5dt</span></div></div></div>
+                <div class="card"><img src="images/banbalouyni2.jpg" alt="K3iba banbalouni 3lech la"><div class="content"><div class="name">K3iba banbalouni 3lech la</div><div class="desc"></div><div class="meta"><span class="prix-label">Prix</span><span class="price">1.5dt</span></div></div></div>
             </div>
         </section>
 
