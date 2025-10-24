@@ -88,6 +88,9 @@
         }
 
         .filter-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             padding: 8px 16px;
             background-color: #fff;
             border: 2px solid #333;
@@ -97,6 +100,16 @@
             margin: 5px;
             font-size: 14px;
             white-space: nowrap;
+            color: #000;
+            gap: 6px;
+        }
+
+        .filter-btn .category-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            background-color: #f0f0f0;
         }
 
         .filter-btn:hover, .filter-btn.active {
@@ -196,33 +209,33 @@
         <div class="filter-section">
             <button class="scroll-btn left" aria-label="Scroll left">←</button>
             <div class="filter-container">
-                <button class="filter-btn active" data-category="all">All</button>
-                <button class="filter-btn" data-category="nharna">Nharna degla w 3sal</button>
-            <button class="filter-btn" data-category="7alli">7alli bach twalli</button>
-            <button class="filter-btn" data-category="lelli">Lelli y7eb l7ar</button>
-            <button class="filter-btn" data-category="kwayes">Kwayes jus 3attayer</button>
-            <button class="filter-btn" data-category="petit-dejeuner">Petit Déjeuner</button>
-            <button class="filter-btn" data-category="cafes">Nos Cafés</button>
-            <button class="filter-btn" data-category="nespresso">Nos Cafés Nespresso</button>
-            <button class="filter-btn" data-category="aromatise">Cafés Aromatisé</button>
-            <button class="filter-btn" data-category="iced-coffee">Iced Coffee</button>
-            <button class="filter-btn" data-category="the">Nos Thé</button>
-            <button class="filter-btn" data-category="iced-the">Iced Thé</button>
-            <button class="filter-btn" data-category="jus">Nos Jus</button>
-            <button class="filter-btn" data-category="cocktails">Nos Cocktails</button>
-            <button class="filter-btn" data-category="mousses">Nos Mousses</button>
-            <button class="filter-btn" data-category="jwejem">Jwejem</button>
-            <button class="filter-btn" data-category="smoothies">Nos Smoothies</button>
-            <button class="filter-btn" data-category="mojitos">Nos Mojitos</button>
-            <button class="filter-btn" data-category="gaufres">Nos Gaufres</button>
-            <button class="filter-btn" data-category="pains">Nos Pains Cake</button>
-            <button class="filter-btn" data-category="crepes-sucrees">Nos Crêpes Sucrées</button>
-            <button class="filter-btn" data-category="crepes-salees">Nos Crêpes Salées</button>
-            <button class="filter-btn" data-category="omelettes">Nos Omelettes</button>
-            <button class="filter-btn" data-category="panini">Panini</button>
-            <button class="filter-btn" data-category="boissons">Boissons Froides</button>
-            <button class="filter-btn" data-category="9ayda">93ayda 3ssal</button>
-            <button class="filter-btn" data-category="chicha">Chicha</button>
+                <button class="filter-btn active" data-category="all"><img src="" alt="" class="category-icon">All</button>
+                <button class="filter-btn" data-category="nharna"><img src="" alt="Nharna icon" class="category-icon">Nharna degla w 3sal</button>
+            <button class="filter-btn" data-category="7alli"><img src="" alt="7alli icon" class="category-icon">7alli bach twalli</button>
+            <button class="filter-btn" data-category="lelli"><img src="" alt="Lelli icon" class="category-icon">Lelli y7eb l7ar</button>
+            <button class="filter-btn" data-category="kwayes"><img src="" alt="Kwayes icon" class="category-icon">Kwayes jus 3attayer</button>
+            <button class="filter-btn" data-category="petit-dejeuner"><img src="" alt="Petit Déjeuner icon" class="category-icon">Petit Déjeuner</button>
+            <button class="filter-btn" data-category="cafes"><img src="" alt="Cafés icon" class="category-icon">Nos Cafés</button>
+            <button class="filter-btn" data-category="nespresso"><img src="" alt="Nespresso icon" class="category-icon">Nos Cafés Nespresso</button>
+            <button class="filter-btn" data-category="aromatise"><img src="" alt="Aromatisé icon" class="category-icon">Cafés Aromatisé</button>
+            <button class="filter-btn" data-category="iced-coffee"><img src="" alt="Iced Coffee icon" class="category-icon">Iced Coffee</button>
+            <button class="filter-btn" data-category="the"><img src="" alt="Thé icon" class="category-icon">Nos Thé</button>
+            <button class="filter-btn" data-category="iced-the"><img src="" alt="Iced Thé icon" class="category-icon">Iced Thé</button>
+            <button class="filter-btn" data-category="jus"><img src="" alt="Jus icon" class="category-icon">Nos Jus</button>
+            <button class="filter-btn" data-category="cocktails"><img src="" alt="Cocktails icon" class="category-icon">Nos Cocktails</button>
+            <button class="filter-btn" data-category="mousses"><img src="" alt="Mousses icon" class="category-icon">Nos Mousses</button>
+            <button class="filter-btn" data-category="jwejem"><img src="" alt="Jwejem icon" class="category-icon">Jwejem</button>
+            <button class="filter-btn" data-category="smoothies"><img src="" alt="Smoothies icon" class="category-icon">Nos Smoothies</button>
+            <button class="filter-btn" data-category="mojitos"><img src="" alt="Mojitos icon" class="category-icon">Nos Mojitos</button>
+            <button class="filter-btn" data-category="gaufres"><img src="" alt="Gaufres icon" class="category-icon">Nos Gaufres</button>
+            <button class="filter-btn" data-category="pains"><img src="" alt="Pains Cake icon" class="category-icon">Nos Pains Cake</button>
+            <button class="filter-btn" data-category="crepes-sucrees"><img src="" alt="Crêpes Sucrées icon" class="category-icon">Nos Crêpes Sucrées</button>
+            <button class="filter-btn" data-category="crepes-salees"><img src="" alt="Crêpes Salées icon" class="category-icon">Nos Crêpes Salées</button>
+            <button class="filter-btn" data-category="omelettes"><img src="" alt="Omelettes icon" class="category-icon">Nos Omelettes</button>
+            <button class="filter-btn" data-category="panini"><img src="" alt="Panini icon" class="category-icon">Panini</button>
+            <button class="filter-btn" data-category="boissons"><img src="" alt="Boissons icon" class="category-icon">Boissons Froides</button>
+            <button class="filter-btn" data-category="9ayda"><img src="" alt="9ayda icon" class="category-icon">93ayda 3ssal</button>
+            <button class="filter-btn" data-category="chicha"><img src="" alt="Chicha icon" class="category-icon">Chicha</button>
             </div>
             <button class="scroll-btn right" aria-label="Scroll right">→</button>
         </div>
